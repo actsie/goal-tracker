@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "1.0.0",
+  "exportTimestamp": "2025-09-17T03:01:51.281Z",
+  "dayData": [
+    {
+      "date": "2025-09-16",
+      "notes": [
+        {
+          "id": "4207e458-1d1b-429d-a10a-e7b62b63a820",
+          "content": "This is my first note! Testing the autosave functionality.\n\nIt supports multi-line text and should save automatically after 1 second.",
+          "createdAt": "2025-09-16T08:25:51.815Z",
+          "updatedAt": "2025-09-16T08:26:12.050Z"
+        },
+        {
+          "id": "5d97fd96-2d32-4730-86bd-c7d166537d4e",
+          "content": "Testing the E2E functionality! This note should autosave within 1 second of typing. Let's verify the daily notes feature is working perfectly.",
+          "createdAt": "2025-09-16T08:30:18.164Z",
+          "updatedAt": "2025-09-16T08:30:48.747Z"
+        }
+      ],
+      "checklist": [],
+      "createdAt": "2025-09-16T08:25:51.814Z",
+      "updatedAt": "2025-09-16T08:30:48.747Z"
+    },
+    {
+      "date": "2025-09-17",
+      "notes": [
+        {
+          "id": "3e927325-8b0f-4a07-b370-83837e730523",
+          "content": "This is my test note for September 17th. I'm testing the goal tracker application functionality.",
+          "createdAt": "2025-09-16T08:15:17.417Z",
+          "updatedAt": "2025-09-16T08:15:29.450Z"
+        },
+        {
+          "id": "4c817296-d2fe-45c3-99ed-8bb30d9c6a85",
+          "content": "This is a new note to test undo/redo functionality.",
+          "createdAt": "2025-09-17T02:12:07.117Z",
+          "updatedAt": "2025-09-17T02:12:21.317Z"
+        },
+        {
+          "id": "016976da-2daf-4298-8a87-70d95b84615c",
+          "content": "This is a test note to verify undo/redo functionality works correctly.",
+          "createdAt": "2025-09-17T02:21:04.477Z",
+          "updatedAt": "2025-09-17T02:21:17.627Z"
+        },
+        {
+          "id": "e2cc5167-2d89-4e28-a6c9-26f46640ddb6",
+          "content": "This is another test note to check if undo works correctly after the fix.",
+          "createdAt": "2025-09-17T02:22:18.178Z",
+          "updatedAt": "2025-09-17T02:22:30.562Z"
+        },
+        {
+          "id": "a38b2116-76b3-487f-ab1b-0ecaf42380a9",
+          "content": "This is a test note to verify undo/redo functionality works perfectly!",
+          "createdAt": "2025-09-17T02:42:20.064Z",
+          "updatedAt": "2025-09-17T02:42:36.014Z"
+        }
+      ],
+      "checklist": [
+        {
+          "id": "ff6ce6fc-81f2-4c04-b443-cf43ae23eaeb",
+          "text": "Complete project documentation",
+          "completed": true,
+          "order": 0,
+          "createdAt": "2025-09-16T08:15:40.198Z",
+          "updatedAt": "2025-09-16T08:15:55.767Z"
+        },
+        {
+          "id": "9b9b0b39-34e3-439d-a2fa-f3c73942df35",
+          "text": "Review code changes",
+          "completed": true,
+          "order": 1,
+          "createdAt": "2025-09-16T08:15:50.339Z",
+          "updatedAt": "2025-09-17T02:12:49.720Z"
+        },
+        {
+          "id": "c0d6f797-b6e3-4e1d-bc31-b57ee5ef123d",
+          "text": "Test new checklist item",
+          "completed": true,
+          "order": 2,
+          "createdAt": "2025-09-17T02:12:35.140Z",
+          "updatedAt": "2025-09-17T02:42:52.298Z"
+        },
+        {
+          "id": "7cfeba54-7857-4cca-82b7-0eb824980edc",
+          "text": "Test checklist undo functionality",
+          "completed": true,
+          "order": 3,
+          "createdAt": "2025-09-17T02:23:06.545Z",
+          "updatedAt": "2025-09-17T02:23:16.462Z"
+        },
+        {
+          "id": "7942b138-ad1c-4fff-a7d4-73fb39e0954d",
+          "text": "New test item for undo testing",
+          "completed": false,
+          "order": 4,
+          "createdAt": "2025-09-17T02:43:14.514Z",
+          "updatedAt": "2025-09-17T02:43:14.514Z"
+        }
+      ],
+      "createdAt": "2025-09-16T08:15:17.417Z",
+      "updatedAt": "2025-09-17T02:43:14.514Z"
+    }
+  ],
+  "goals": [
+    {
+      "id": "c55d69b0-d0fb-456d-8ad9-bafaccaf63d8",
+      "name": "Default Goal",
+      "createdAt": "2025-09-16T08:00:21.472Z"
+    },
+    {
+      "id": "fcac23e7-784c-4ebb-a9de-e78306494bdb",
+      "name": "Default Goal",
+      "createdAt": "2025-09-16T08:00:21.471Z"
+    }
+  ]
+}
