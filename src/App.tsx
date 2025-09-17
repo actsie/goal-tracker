@@ -5,6 +5,9 @@ import { NotebookEditor } from './components/NotebookEditor'
 import { Analytics } from './components/Analytics'
 import { GlobalSearch } from './components/GlobalSearch'
 import { Settings } from './components/Settings'
+import DemoBanner from './components/DemoBanner'
+import PawgrammerBanner from './components/PawgrammerBanner'
+import VideoNudge from './components/VideoNudge'
 import { useAppStore } from './store/useAppStore'
 import { useGlobalKeyboard } from './hooks/useGlobalKeyboard'
 import { db, initializeDefaults } from './lib/database'
@@ -95,8 +98,10 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="flex h-screen">
+    <div className="min-h-screen bg-background flex flex-col">
+      <PawgrammerBanner />
+      <DemoBanner />
+      <div className="flex flex-1">
         {/* Sidebar */}
         <div className="w-80 border-r bg-card flex flex-col">
           {/* Header */}
@@ -178,6 +183,11 @@ function App() {
         onClose={handleSearchClose}
         onOpenNote={handleOpenNote}
         onOpenChecklistItem={handleOpenChecklistItem}
+      />
+
+      {/* Video Nudge Widget */}
+      <VideoNudge
+        embedUrl="https://www.youtube-nocookie.com/embed/pGNIEEcD3f8?rel=0&modestbranding=1&playsinline=1&autoplay=1"
       />
     </div>
   )
