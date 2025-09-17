@@ -100,7 +100,6 @@ function App() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <PawgrammerBanner />
-      <DemoBanner />
       <div className="flex flex-1">
         {/* Sidebar */}
         <div className="w-80 border-r bg-card flex flex-col">
@@ -184,6 +183,9 @@ function App() {
         onOpenNote={handleOpenNote}
         onOpenChecklistItem={handleOpenChecklistItem}
       />
+
+      {/* Demo Toast Notification */}
+      <DemoBanner />
 
       {/* Video Nudge Widget */}
       <VideoNudge

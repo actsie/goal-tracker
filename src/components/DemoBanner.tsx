@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-import { X, Info } from 'lucide-react';
+import { X } from 'lucide-react';
 
 /**
- * Dismissible demo mode banner
+ * Dismissible demo mode toast notification
  * Shows only in demo mode, persists dismissal in localStorage
  */
 export default function DemoBanner() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // Show banner if explicitly in demo mode OR if domain contains 'demo' or it's a deployment
+    // Show toast if explicitly in demo mode OR if domain contains 'demo' or it's a deployment
     const isDemoEnvironment =
       (typeof window !== 'undefined' && (
         window.location.hostname.includes('demo') ||
@@ -21,15 +21,12 @@ export default function DemoBanner() {
       ));
 
     if (isDemoEnvironment) {
-      const dismissed = localStorage.getItem('demo-banner-dismissed');
-      if (dismissed !== 'true') {
-        setShow(true);
-      }
+      // Show on every page load for demo environments
+      setShow(true);
     }
   }, []);
 
   const handleDismiss = () => {
-    localStorage.setItem('demo-banner-dismissed', 'true');
     setShow(false);
   };
 
@@ -38,39 +35,21 @@ export default function DemoBanner() {
 
   return (
     <div
-      role="banner"
-      aria-labelledby="demo-banner-title"
-      className="mb-4 rounded-lg border border-blue-200 bg-blue-50 p-4 shadow-sm"
+      className="fixed bottom-4 right-4 z-50 bg-gradient-to-r from-[#7866CC]/90 via-[#9B7EF7]/90 to-[#AF97F8]/90 rounded-lg shadow-lg p-4 max-w-sm transition-all duration-300 animate-in slide-in-from-bottom-2 fade-in"
+      role="alert"
+      aria-live="polite"
     >
       <div className="flex items-start justify-between gap-3">
-        <div className="flex items-start gap-2 flex-1">
-          <Info
-            className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0"
-            aria-hidden="true"
-          />
-          <div>
-            <h2
-              id="demo-banner-title"
-              className="text-sm font-medium text-blue-900 mb-1"
-            >
-              Demo Mode Active
-            </h2>
-            <div className="space-y-2">
-              <p className="text-sm text-blue-800 leading-relaxed">
-                You can test creating goals, adding tasks, and using all features, but data may reset periodically. In the full app, all data is saved permanently in your browser.
-              </p>
-              <p className="text-sm text-red-700 font-medium leading-relaxed">
-                ⚠️ Privacy Note: This demo may share data across users. Avoid entering sensitive personal information.
-              </p>
-            </div>
-          </div>
+        <div className="flex-1">
+          <p className="text-sm text-white leading-relaxed">
+            Demo mode: Data may reset periodically but remains private to your browser.
+          </p>
         </div>
-
         <button
           type="button"
           onClick={handleDismiss}
-          aria-label="Dismiss demo banner"
-          className="flex-shrink-0 rounded-md p-1 text-blue-600 hover:bg-blue-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition-colors"
+          aria-label="Dismiss demo notification"
+          className="flex-shrink-0 rounded-md p-1 text-white/70 hover:text-white hover:bg-white/10 transition-colors"
         >
           <X className="h-4 w-4" aria-hidden="true" />
         </button>
@@ -80,11 +59,11 @@ export default function DemoBanner() {
 }
 
 /**
- * Reset banner visibility (for testing/admin)
+ * Reset toast visibility (for testing/admin)
  */
 export const resetDemoBanner = () => {
   if (typeof window !== 'undefined') {
-    localStorage.removeItem('demo-banner-dismissed');
+    localStorage.removeItem('demo-toast-dismissed');
     window.location.reload();
   }
 };
